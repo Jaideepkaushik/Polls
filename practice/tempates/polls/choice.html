@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="text-center mb-3"> {{k.Question}}</h1>
+        {% if super%}
+        {% for i in super %}
+        <div class="card mb-3">
+            <div class="card-body">
+            <p class="lead">{{i.choice_text}}    <span style="margin-left: 60%;">votes : {{i.votes}}</span></p>
+
+            </div>
+            </div>
+
+
+        {% endfor %}
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="text-center mb-3"> Poll Question</h1>
+        {% if hello%}
+        {% for i in hello %}
+        <div class="card mb-3">
+            <div class="card-body">
+            <p class="lead">{{i.question_text}}</p>
+                <a href="{% url 'vote' i.id %}">vote</a>
+                <a href="{% url 'result' i.id %}">result</a>
+            </div>
+            </div>
+
+        {% endfor %}
+        {% endif %}
+{% endblock %}

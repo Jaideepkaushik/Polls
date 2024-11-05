@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center mb-3" xmlns="http://www.w3.org/1999/html"> {{k.Question}}</h1>
+<h1 class="text-center mb-3"> {{name}}</h1>
+    <form action="/yes" method="POST">
+        {% csrf_token %}
+        {% if votelist%}
+        {% for i in votelist %}
+        <input type="radio" name="re" value="{{i.id}}">
+        <label>
+        <div class="card mb-3">
+            <div class="card-body">
+            {{i}}
+
+
+            </div>
+            </div>
+        </label>
+        </input>
+        <br>
+                {% endfor %}
+        {% endif %}
+        <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
